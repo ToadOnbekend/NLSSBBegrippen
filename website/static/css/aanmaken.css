@@ -1,0 +1,204 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: Roboto;
+
+}
+
+@font-face {
+    font-family: RobotoI;
+    src: url('/static/fonts/RobotoItalicVRF.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/static/fonts/RobotoVRF.ttf');
+    font-style: normal;
+}
+
+h1 {
+    color:red;
+}
+
+
+.navbar{
+    background-color: #CFE2F3;
+    display: flex;
+
+    justify-content: space-between;
+     align-items: center;
+    padding: 0 20px;
+    border-bottom: 2px black solid;
+    height: 60px
+}
+
+.navbar a {
+    font-size:22px;
+    color: black;
+    text-decoration: none;
+}
+
+.content{
+    min-height: calc(100vh - 60px);
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
+
+.begripaanmakenpagina{
+    width: 80%;
+    max-width: 1500px;
+    margin: 25px auto;
+}
+
+.voorkeurs_term_invulveld{
+    display: flex;
+    align-items: center;
+    border-bottom: 5px black solid;
+    padding: 10px 20px;
+
+}
+
+.begrip-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.begrip_datum_en_status {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+}
+
+
+
+.begrippenkader_lijst {
+    margin: 20px 50px 8px;
+    font-size: 17px;
+}
+
+.link_naam_begrippenkader a {
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+
+.alternatieve_termen {
+    margin: 0 50px;
+    padding: 10px;
+
+    border: 1px solid #999;
+    background-color: #eeeeee;
+}
+
+
+
+.begrip_informatie_formulier {
+    margin: 15px 60px;
+
+}
+
+.informatie_regel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.informatie_label {
+
+    color: black;
+
+    padding: 2px 4px;
+    margin-right: 4px;
+}
+
+.informatie_tekst{
+    color:red;
+    outline:none;
+    background:none;
+    border: 1px solid black;
+    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
+}
+
+.informatie_tekst:focus{
+    border: 1px solid red;
+}
+
+
+
+.extra_informatie {
+    margin: 15px 50px;
+    border: 1px solid #777;
+    padding: 8px;
+
+    font-size: 18px;
+}
+
+.extra_informatie div {
+    margin: 8px 0;
+}
+
+.lijs_alternatieve_termen{
+    display: flex;
+    gap: 10px;
+    font-style: italic;
+}
+
+
+
+#voorkeurs_term, #naam_begrippenkader_invulveld{
+    width: 85%;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    font-size: 27px;
+    font-weight: bold;
+    color: #555;
+    font-family: Roboto;
+}
+
+
+/* Kleur van [Zoeken] voordat je typt */
+#voorkeurs_term::placeholder, #naam_begrippenkader_invulveld::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+button{
+    border: 1px solid black;
+    padding: 8px;
+    margin: 0;
+    width: 14%;
+
+}
+
+.informatie_tekst_vervalt_op{
+    width: 20%;
+    color: red;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.informatie_tekst_vervalt_op:focus{
+    border: 1px solid red;
+}
+
+.informatie_tekst_select{
+    border: 1px solid black;
+    padding: 5px;
+    color: red;
+    width: 15%;
+    max-width: 15%;
+    font-family: Roboto;
+}
+.informatie_tekst_select:focus{
+    border: 1px solid red;
+}

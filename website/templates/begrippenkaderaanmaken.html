@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="static/css/aanmaken.css" rel="stylesheet" type="text/css" />
+        <title>Kader aanmaken</title>
+    </head>
+    <body>
+
+    <nav class="navbar">
+        <a>Menu</a>
+        <a href="/">Home ↗</a>
+        <a href="/zoeken">Zoeken ↗</a>
+        <a>Gebruiker opties</a>
+
+    </nav>
+
+    <main class="begripaanmakenpagina">
+
+        <section class="voorkeurs_term_invulveld">
+
+            <input
+                    id="naam_begrippenkader_invulveld"
+                    type="text"
+                    placeholder="Typ begrippenkader naam"
+                    autocomplete="off"
+                    onfocusout="controleerKader()">
+
+                <button id="begrippenkader_toevoegen">Begrippenkader toevoegen</button>
+
+        </section>
+
+
+        <section class="begrip_informatie_formulier">
+
+
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Omschrijving:</span>
+                <textarea id="omschrijving_begrippenkader" class="informatie_tekst" type="text" placeholder="Omschrijving" autocomplete="off"></textarea>
+            </div>
+
+
+        </section>
+
+        <section class="extra_informatie">
+            <div class="informatie_regel">
+                <span class="informatie_label">Status:</span>
+                <select id="status" class="informatie_tekst_select">
+                    <option value="actief">Actief</option>
+                </select>
+            </div>
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Vervalt op:</span>
+                <input id="vervalt_op" class="informatie_tekst_vervalt_op" type="text" placeholder="Vervalt op" autocomplete="off">
+            </div>
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Door functie:</span>
+                <select id="aangemaakt_door_functie" class="informatie_tekst_select">
+                    <option value="actief">Actief</option>
+                </select>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="static//js//scriptKaderAanmaken.js" defer></script>
+    </body>
+</html>

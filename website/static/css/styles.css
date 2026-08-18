@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: Roboto;
+
+}
+
+@font-face {
+    font-family: RobotoI;
+    src: url('/static/fonts/RobotoItalicVRF.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/static/fonts/RobotoVRF.ttf');
+    font-style: normal;
+}
+
+h1 {
+    color:red;
+}
+
+
+.navbar{
+    background-color: #CFE2F3;
+    display: flex;
+
+    justify-content: space-between;
+     align-items: center;
+    padding: 0 20px;
+    border-bottom: 2px black solid;
+    height: 60px
+}
+
+.navbar a {
+    font-size:22px;
+    color: black;
+    text-decoration: none;
+}
+
+.content{
+    min-height: calc(100vh - 60px);
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
+
+.container{
+    display: flex;
+    align-items: center;
+
+    width: 50%;
+
+    margin: 2px auto;
+   /*justify-content: center;*/
+
+    max-width: 1500px;
+        /*margin-top: 25px;*/
+}
+
+.tekstallebegrippen{
+    flex: 1;
+
+    /*margin: 0;*/
+}
+
+.tekstallebegrippen{
+
+    margin: 0;
+    font-size: 35px;
+
+
+}
+
+.knoppen{
+
+}
+
+.knoppen button{
+    border: 1px solid black;
+    padding: 8px;
+    font-family: Roboto;
+
+}
+
+.begrippenrooster{
+    width: 80%;
+    margin: 25px auto;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+
+}
+
+
+.begrippenkader-titel {
+    border: 2px solid black;
+
+    padding: 10px;
+
+    font-size: 26px;
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.begrippen-lijst {
+    display: flex;
+    flex-direction: column;
+}
+
+.begrip-item{
+    position: relative;
+
+    padding: 12px 20px;
+
+    font-size: 24px;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.begrip-item a {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.begrip-item a:hover {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+/* Iedere tweede term grijs */
+.begrip-item:nth-child(even) {
+    background-color: #d2d2d4;
+}
+
+.tooltip {
+    display: none;
+
+    position: absolute;
+
+    left: 20px;
+    top: 100%;
+
+    width: 300px;
+
+    padding: 15px;
+
+    background-color: white;
+    border: 1px solid black;
+
+    font-size: 16px;
+    font-style: normal;
+    text-decoration: none;
+
+    z-index: 10;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.begrip-item:hover .tooltip {
+    display: block;
+}
+
+.informatiebegrippenkader{
+
+    flex:1;
+    margin: 0;
+
+
+
+
+    font-size:20px;
+
+}
+
+.begrippenkader_link{
+    text-decoration: none;
+    color: black;
+}
+
+#naam_begrippenkader {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.begrippenkader_link:hover{text-decoration: underline;}

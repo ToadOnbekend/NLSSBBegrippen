@@ -1,0 +1,185 @@
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: Roboto;
+
+}
+
+@font-face {
+    font-family: RobotoI;
+    src: url('/static/fonts/RobotoItalicVRF.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/static/fonts/RobotoVRF.ttf');
+    font-style: normal;
+}
+
+h1 {
+    color: red;
+}
+
+
+.navbar {
+    background-color: #CFE2F3;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+    border-bottom: 2px black solid;
+    height: 60px;
+}
+
+.navbar a {
+    font-size: 22px;
+    color: black;
+    text-decoration: none;
+}
+
+
+/* Hele zoekpagina */
+.zoekpagina {
+    width: 80%;
+    max-width: 1500px;
+
+    margin: 25px auto;
+}
+
+
+/* Bovenste zoekgedeelte */
+.zoek_gedeelte {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 5px solid black;
+
+    padding: 10px 20px;
+    gap: 30px;
+}
+
+
+/* Het zoekveld zelf */
+#zoekveld {
+    width: 100%;
+
+    border: none;
+    outline: none;
+    background: none;
+    font-family: Roboto;
+    font-size: 27px;
+    font-weight: bold;
+    color: #555;
+}
+
+
+/* Kleur van [Zoeken] voordat je typt */
+#zoekveld::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+
+/* Tekst rechts van het zoekveld */
+.zoek_uitleg {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+
+    color: #555;
+}
+
+
+/* Gebied waar resultaten komen */
+.zoekresultaten {
+    width: 80%;
+
+    margin: 25px auto;
+    padding: 0;
+
+    /* oude achtergrond/border niet meer nodig */
+    border: none;
+    background-color: transparent;
+}
+
+
+/* Status zoals "Typ hierboven..." */
+.melding {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #555;
+    font-size: 16px;
+}
+
+
+/* Eén zoekresultaat */
+.zoekresultaat {
+    padding: 10px 10px;
+
+    border: 1px solid #000000;
+    border-bottom: none;
+
+    font-size: 20px;
+
+}
+
+
+/* Onderste resultaat krijgt ook onderrand */
+.zoekresultaat:last-child {
+    border-bottom: 1px solid #000000;
+}
+
+
+/* Om en om grijs */
+.zoekresultaat:nth-child(even) {
+    background-color: #d2d2d4;
+}
+
+
+.resultaat-termen {
+    font-size: 20px;
+
+    margin-bottom: 3px;
+}
+
+
+/* Voorkeursterm */
+.resultaat-voorkeursterm {
+    font-weight: 500;
+}
+
+
+/* Alternatieve termen */
+.resultaat-alternatieven {
+    font-style: italic;
+}
+
+
+/* Definitie */
+.resultaat-definitie {
+    font-size: 18px;
+    color: #444;
+}
+
+.alternatieve-term {
+    border-bottom: 1px solid black;
+    background-color: #bfbfbf;
+    margin-right: 13px;
+    margin-bottom: 16px;
+
+}
+
+.resultaat_regel{
+    margin-bottom: 10px;
+}
+
+/* Onderste element krijgt geen margin */
+.resultaat-regel:last-child {
+    margin-bottom: 0;
+}

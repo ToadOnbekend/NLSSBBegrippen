@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="static/css/zoeken.css" rel="stylesheet" type="text/css">
+    <title>Zoeken</title>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a>Menu</a>
+    <a href="/">Home ↗</a>
+    <a href="/zoeken">Zoeken ↗</a>
+    <a>Gebruiker opties</a>
+</nav>
+
+<main class="zoekpagina">
+
+    <section class="zoek_gedeelte">
+
+        <input
+            id="zoekveld"
+            type="text"
+            placeholder="Zoek op: voorkeursterm, alternatieve termen, begrippenkader, definitie"
+            autocomplete="off"
+        >
+
+    </section>
+
+    <div class="zoekresultaten">
+
+
+        <span class="melding"  id="melding_zoeken">
+            Typ hierboven om te zoeken
+        </span>
+
+        <div class="alle_resultaten" id="resultatenlijst"></div>
+
+    </div>
+
+</main>
+
+<script src="static/js/scriptZoeken.js" defer></script>
+
+</body>
+</html>

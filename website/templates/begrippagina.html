@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="static/css/begrip.css" rel="stylesheet" type="text/css" />
+        <title>Begrip</title>
+    </head>
+    <body>
+
+    <nav class="navbar">
+        <a>Menu</a>
+        <a href="/">Home ↗</a>
+        <a href="/zoeken">Zoeken ↗</a>
+        <a>Gebruiker opties</a>
+
+    </nav>
+
+    <main class="begrippagina">
+
+        <section class="begrip_tekst">
+            <span class="begrip_voorkeursterm" id="begrip_naam">Naam</span>
+            <div class="begrip_datum_en_status">
+                <span id="begrip_status">Status</span>
+                <span id="begrip_aangemaakt_op">Aangemaakt op</span>
+                <span id="begrip_gewijzigd_op">Gewijzigd op</span>
+            </div>
+        </section>
+
+        <p class="begrip_behoort_tot_begrippenkader">
+            Behoort tot begrippenkader:
+            <a id="link_naam_begrippenkader" href="#">
+                naam_kader ->
+            </a>
+        </p>
+
+        <div class="alternatieve_termen">
+            <span id="alternatieve_termen">Alle alternatieve termen:</span>
+            <div class="lijs_alternatieve_termen" id="alternatieve_termen_lijst">
+            </div>
+        </div>
+
+        <section class="begrip_informatie">
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Definitie:</span>
+                <span id="definitie_begrip" class="informatie_tekst">Tekst</span>
+            </div>
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Toelichting:</span>
+                <span id="toelichting_begrip" class="informatie_tekst">Tekst</span>
+            </div>
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Voorbeeld:</span>
+                <span id="voorbeeld_begrip" class="informatie_tekst">Tekst</span>
+            </div>
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Heeft bron:</span>
+                <span id="heeft_bron" class="informatie_tekst">Tekst</span>
+            </div>
+
+        </section>
+
+        <section class="extra_informatie">
+            <div class="informatie_regel">
+                <span class="informatie_label">Status:</span>
+                <span id="status" class="informatie_tekst">Tekst</span>
+            </div>
+            <div class="informatie_regel">
+                <span class="informatie_label">Vervalt op:</span>
+                <span id="vervalt_op" class="informatie_tekst">Tekst</span>
+            </div>
+            <div class="informatie_regel">
+                <span class="informatie_label">Begrip code:</span>
+                <span id="begrip_code" class="informatie_tekst">Tekst</span>
+            </div>
+
+            <div class="informatie_regel">
+                <span class="informatie_label">Door functie:</span>
+                <span id="aangemaakt_door_functie" class="informatie_tekst">Tekst</span>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="static//js//scriptBegrip.js" defer></script>
+    </body>
+</html>
