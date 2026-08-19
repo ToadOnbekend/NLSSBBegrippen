@@ -13,7 +13,7 @@
     // }
 
 async function laadKeuzeMenus() {
-    const response = await fetch("http://127.0.0.1:5000/invoerschermdata/");
+    const response = await fetch("http://127.0.0.1:5000/invoerschermdata");
     const data = await response.json();
 
     vulSelect("status", data.statussen);

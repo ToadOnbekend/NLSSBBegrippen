@@ -16,7 +16,7 @@ const parameters = new URLSearchParams(window.location.search);
 const kaderNaam=parameters.get('naam_begrippenkader');
 
 async function laadKeuzeMenus() {
-    const response = await fetch("http://127.0.0.1:5000/invoerschermdata/");
+    const response = await fetch("http://127.0.0.1:5000/invoerschermdata");
     const data = await response.json();
 
     vulSelect("naam_begrippenkader", data.begrippenkaders, kaderNaam);

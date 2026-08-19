@@ -6,7 +6,7 @@ CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-@app.route("/geef_alle_statussen/", methods=['GET']  )
+@app.route("/geef_alle_statussen", methods=['GET']  )
 def geefstatusen():
 
     v = t.geef_alle_statussen()
@@ -14,7 +14,7 @@ def geefstatusen():
 
     return jsonify(v), 201
 
-@app.route("/geef_begrip_details/", methods=['GET'])
+@app.route("/geef_begrip_details", methods=['GET'])
 def geef_begrip_details():
     begrip_id = request.args.get("begrip_id")
     begrippenkader = request.args.get("naam_begrippenkader")
@@ -40,7 +40,7 @@ def geef_begrip_details():
     else:
         return jsonify({"informatie": "Zoekopdracht niet geldig"}), 201
 
-@app.route("/zoek_begrip/", methods=['GET'])
+@app.route("/zoek_begrip", methods=['GET'])
 def zoeken_op_begrip_algemeen():
     zoekopdracht = request.args.get("zoek_opdracht")
 
@@ -55,11 +55,11 @@ def zoeken_op_begrip_algemeen():
     else:
         return jsonify({"informatie": "Zoekopdracht niet geldig"}), 201
 
-@app.route("/alle_begrippen_met_begrippenkaders/", methods=['GET'])
+@app.route("/alle_begrippen_met_begrippenkaders", methods=['GET'])
 def alle_begrippen_met_begrippenkaders():
     return jsonify(t.geef_alle_begrippen_met_begrippenkaders()), 201
 
-@app.route("/begrippenkader_detail/", methods=['GET'])
+@app.route("/begrippenkader_detail", methods=['GET'])
 def alle_begrippenkaders():
     naam_begrippenkader = request.args.get("naam_begrippenkader")
     begrippenkader_id = request.args.get("begrippenkader_id")
@@ -80,14 +80,14 @@ def alle_begrippenkaders():
 
 
 
-@app.route("/invoerschermdata/", methods=['GET'])
+@app.route("/invoerschermdata", methods=['GET'])
 def geef_invoerscherm_data():
 
     return jsonify(
            t.geef_invoerscherm_data()
         ), 201
 
-@app.route("/allebegrippen/", methods=['GET'])
+@app.route("/allebegrippen", methods=['GET'])
 def geef_allebegrippen():
 
     return jsonify(
@@ -98,7 +98,7 @@ def geef_allebegrippen():
 
 
 #TODO: Alle begrippenkaders
-@app.route("/aanmaken_begrip/", methods=['POST'])
+@app.route("/aanmaken_begrip", methods=['POST'])
 def aanmaken_begrip():
     data = request.get_json()
 
@@ -113,7 +113,7 @@ def aanmaken_begrip():
     else:
         return jsonify({"post_status": "Voorkeursterm bestaat al"}), 201
 
-@app.route("/aanmaken_begrippenkader/", methods=['POST'])
+@app.route("/aanmaken_begrippenkader", methods=['POST'])
 def aanmaken_begrippenkader():
     data = request.get_json()
 
