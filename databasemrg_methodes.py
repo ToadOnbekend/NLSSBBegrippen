@@ -89,7 +89,7 @@ stormrg.maakAlternatieve_term(
         "invoer": {
             "gehele_naam": "Gebruiker1"
         },
-        "alternatieve_term": "Alternative_term",
+        "alternatieve_term": "5",
         "voorkeursterm": "1E voorkeursterm",
         "naam_begrippenkader": "Yoshi",
         "status": "Geen Toad",
@@ -287,6 +287,16 @@ pprint.pprint(controle_resultaat)
 controle_resultaat = stormrg.controleer_of_begrippenkader_al_bestaat(
     {
         "naam_begrippenkader": "Yoshop"
+    }
+)
+pprint.pprint(controle_resultaat)
+
+#%%
+controle_resultaat = stormrg.controleer_of_alternatieve_term_bestaat(
+    {
+        "naam_begrippenkader": "Yoshi",
+        "voorkeursterm": "1e voorkeursterm",
+        "alternatieve_term": "5"
     }
 )
 pprint.pprint(controle_resultaat)

@@ -108,10 +108,17 @@ class TussenLaag:
                 "gewijzigd_op": "2026-08-13"
             }
             """
+
+
+
             informatie["alternatieve_term"] = term
-            self.stormrg.maakAlternatieve_term(informatie)
-            print("\033[34m    [+] Alternative term --\033[0m")
-            pp.pprint(informatie)
+            bestaat = self.stormrg.controleer_of_alternatieve_term_bestaat(informatie)
+            if not bestaat:
+                self.stormrg.maakAlternatieve_term(informatie)
+                print("\033[34m    [+] Alternative term --\033[0m")
+                pp.pprint(informatie)
+            else:
+                print("\033[37m    [X] Alternative term: \'" + term + "\' bestaat al--\033[0m")
 
         print("\033[34m --------\033[0m")
 

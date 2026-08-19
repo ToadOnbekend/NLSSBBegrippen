@@ -126,13 +126,22 @@ async function maakBegripAanAPI(data) {
 
 
 async function maakAlternatieveTermen(data) {
-    const alternatieveTermen = document
+    const alternatieveTermen1 = document
     .getElementById("alternatieve_termen")
     .value
     .split(",")
     .map(term => term.trim())
     .filter(term => term !== "");
-    alert(alternatieveTermen)
+
+    let alternatieveTermen_geen_dubbele = [];
+    alternatieveTermen1.forEach(element => {
+        if (!alternatieveTermen_geen_dubbele.includes(element)) {
+            alternatieveTermen_geen_dubbele.push(element);
+        } else {
+            alert("Alternatie term: \'"+element + " \' bestaat al, term is overgeslagen");
+        }
+    });
+
 
 
     const data_api = {
@@ -140,7 +149,7 @@ async function maakAlternatieveTermen(data) {
             gehele_naam: "Gebruiker1"
         },
 
-        alternatieve_termen: alternatieveTermen,
+        alternatieve_termen: alternatieveTermen_geen_dubbele ,
 
         voorkeursterm:  document.getElementById("voorkeurs_term").value.trim(),
 

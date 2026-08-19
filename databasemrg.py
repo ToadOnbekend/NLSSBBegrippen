@@ -972,7 +972,7 @@ class StorageManager:
 
     def controleer_of_begrip_al_bestaat(self, informatie:dict) -> bool:
         resultaat_query = self.session.execute(text("""
-            SELECT begrip_id
+            SELECT Begrip.begrip_id
             FROM Begrip
             JOIN Begrippenkader ON Begrippenkader.begrippenkader_id = Begrip.FK_begrippenkader_id
             WHERE UPPER(:voorkeursterm) = UPPER(Begrip.voorkeursterm)
@@ -993,7 +993,7 @@ class StorageManager:
         return bestaat
 
 
-    def controleer_of_begrippenkader_al_bestaat(self, informatie:dict) -> bool:
+    def controleer_of_alternatieve_term_bestaat(self, informatie:dict) -> bool:
         resultaat_query = self.session.execute(text("""
             SELECT begrippenkader_id
             FROM Begrippenkader
@@ -1002,6 +1002,31 @@ class StorageManager:
         """),
         {
                     "naam_begrippenkader": informatie["naam_begrippenkader"],
+                }
+        )
+
+        bestaat = False
+
+        for _ in resultaat_query:
+            bestaat = True
+
+        return bestaat
+
+    def controleer_of_alternatieve_term_bestaat(self, informatie:dict) -> bool:
+        resultaat_query = self.session.execute(text("""
+            SELECT Alternatieve_term.alternatieve_term_id
+            FROM Alternatieve_term
+            JOIN Begrippenkader ON Begrippenkader.begrippenkader_id = Alternatieve_term.FK_begrippenkader_id
+            JOIN Begrip ON Begrip.begrip_id = Alternatieve_term.FK_begrip_id  
+            WHERE UPPER(:voorkeursterm) = UPPER(Begrip.voorkeursterm)
+                AND UPPER(:naam_begrippenkader) = UPPER(Begrippenkader.naam_begrippenkader)
+                AND UPPER(:alternatieve_term) = UPPER(Alternatieve_term.alternatieve_term)
+            LIMIT 1;
+        """),
+        {
+                    "naam_begrippenkader": informatie["naam_begrippenkader"],
+                    "voorkeursterm": informatie["voorkeursterm"],
+                    "alternatieve_term": informatie["alternatieve_term"]
                 }
         )
 
