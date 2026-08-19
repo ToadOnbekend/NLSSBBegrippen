@@ -58,27 +58,29 @@ h1 {
         /*margin-top: 25px;*/
 }
 
-.tekstallebegrippen{
+.tekstallebegrippen, .tekstallebegrippen1{
     flex: 1;
 
     /*margin: 0;*/
 }
 
 .tekstallebegrippen{
-
     margin: 0;
     font-size: 20px;
-
-
 }
 
-.knoppen{
-
+.tekstallebegrippen1{
+    font-size: 35px;
 }
+
+/*.knoppen{*/
+
+/*}*/
 
 .knoppen button{
     border: 1px solid black;
     padding: 8px;
+    font-size: 15px;
     font-family: Roboto;
 
 }
