@@ -83,13 +83,17 @@ h1 {
 
 }
 
-.begrippenrooster{
+.begrippenrooster, .begrippenrooster1{
     width: 80%;
     margin: 25px auto;
     display: grid;
-
     grid-template-columns: 1fr 1fr;
     gap: 5px 10px;
+
+}
+
+.begrippenrooster1{
+    border-top: 2px solid black;
 
 }
 
