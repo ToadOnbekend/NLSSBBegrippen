@@ -993,7 +993,7 @@ class StorageManager:
         return bestaat
 
 
-    def controleer_of_alternatieve_term_bestaat(self, informatie:dict) -> bool:
+    def controleer_of_begrippenkader_al_bestaat(self, informatie:dict) -> bool:
         resultaat_query = self.session.execute(text("""
             SELECT begrippenkader_id
             FROM Begrippenkader
