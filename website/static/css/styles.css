@@ -73,15 +73,31 @@ h1 {
     font-size: 35px;
 }
 
-/*.knoppen{*/
+.knoppen{
+ display: flex;
+ gap: 5px;
+}
+
+/*.knoppen button{*/
+/*    border: 1px solid black;*/
+/*    padding: 8px;*/
+/*    font-size: 15px;*/
+/*    font-family: Roboto;*/
 
 /*}*/
 
-.knoppen button{
+button{
     border: 1px solid black;
     padding: 8px;
+    margin: 0;
+
     font-size: 15px;
-    font-family: Roboto;
+    background-color: #ffffff;
+
+}
+
+button:hover{
+    background-color: #bdbdbd;
 
 }
 

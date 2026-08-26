@@ -69,9 +69,10 @@ begriptoevoegen.addEventListener("click", async function () {
             alert("Er is iets fout gegaan\nFout: " + d);
         } else {
             alert("Begrippenkader is aangemaakt");
+            location.reload();
         }
     } else {
-        alert("Vul alle velden in");
+        alert("Vul alle velden in aangegeven met \"*\"");
     }
 
 });

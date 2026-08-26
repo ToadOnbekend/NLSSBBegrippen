@@ -84,13 +84,16 @@ h1 {
 }
 
 
-
+/*TODO, samen met begrip.css */
 .alternatieve_termen {
     margin: 0 50px;
     padding: 10px;
-
+    display: flex;
     border: 1px solid #999;
     background-color: #eeeeee;
+    align-items: center;
+    gap: 5px;
+
 }
 
 
@@ -167,7 +170,7 @@ h1 {
 
 /* Kleur van [Zoeken] voordat je typt */
 #voorkeurs_term::placeholder, #naam_begrippenkader_invulveld::placeholder {
-    color: #555;
+    color: #ff8282;
     opacity: 1;
 }
 
@@ -177,11 +180,17 @@ button{
     margin: 0;
     width: 16%;
     font-size: 15px;
+    background-color: #ffffff;
+
+}
+
+button:hover{
+    background-color: #bdbdbd;
 
 }
 
 .informatie_tekst_vervalt_op{
-    width: 20%;
+    max-width: 15%;
     color: red;
     outline: none;
     border: 1px solid black;
@@ -192,14 +201,47 @@ button{
     border: 1px solid red;
 }
 
-.informatie_tekst_select{
+/*.informatie_tekst_select {*/
+/*    border: 1px solid black;*/
+/*    padding: 5px;*/
+/*    color: red;*/
+/*    width: 15%;*/
+/*    max-width: 15%;*/
+/*    font-family: Roboto;*/
+/*}*/
+/*.informatie_tekst_select:focus{*/
+/*    border: 1px solid red;*/
+/*    font-family: Roboto;*/
+
+/*}*/
+
+select {
     border: 1px solid black;
     padding: 5px;
     color: red;
     width: 15%;
     max-width: 15%;
-    font-family: Roboto;
+    background-color: white;
+    /*font-family: Roboto;*/
 }
-.informatie_tekst_select:focus{
-    border: 1px solid red;
+select:hover {
+
+    background-color: #dedede;
+    /*font-family: Roboto;*/
+}
+
+
+.informatie_regel {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+
+.informatie_regel input,
+.informatie_regel textarea,
+.informatie_regel select {
+    width: 100%;
+    box-sizing: border-box;
 }

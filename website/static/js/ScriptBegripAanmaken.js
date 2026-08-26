@@ -100,10 +100,11 @@ begriptoevoegen.addEventListener("click", async function () {
                 alert("Er is iets fout gegaan\nFout: " + e);
             } else {
                 alert("Alternatieve termen zijn aangemaakt");
+                location.reload();
             }
         }
     } else {
-        alert("Vul alle velden in");
+        alert("Vul alle velden in aangegeven met \"*\"");
     }
 
 });

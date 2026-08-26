@@ -143,3 +143,20 @@ h1 {
     gap: 10px;
     font-style: italic;
 }
+
+.informatie_regel {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: start;
+
+    margin-bottom: 20px;
+}
+
+
+
+.informatie_regel input,
+.informatie_regel textarea,
+.informatie_regel select {
+    width: 100%;
+    box-sizing: border-box;
+}

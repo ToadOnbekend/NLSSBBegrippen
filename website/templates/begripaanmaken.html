@@ -1,3 +1,5 @@
+<!-- TODO: doorgaan met aanmaken, alles legen -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +24,7 @@
             <input
                     id="voorkeurs_term"
                     type="text"
-                    placeholder="Typ voorkeursterm"
+                    placeholder="* Typ hier de voorkeursterm"
                     autocomplete="off"
                     onfocusout="controleerVoorkeursterm()">
 
@@ -40,28 +42,29 @@
         </p>
 
         <div class="alternatieve_termen">
+            <span class="informatie_label">*Alternatieve termen:</span>
             <textarea id="alternatieve_termen" class="informatie_tekst" type="text" placeholder="Gebruik komma voor scheiden alternatieve termen: term1, term2, term3, ..." autocomplete="off"></textarea>
         </div>
 
         <section class="begrip_informatie_formulier">
 
             <div class="informatie_regel">
-                <span class="informatie_label">Definitie:</span>
+                <span class="informatie_label">*Definitie:</span>
                 <textarea id="definitie_begrip" class="informatie_tekst" type="text" placeholder="Definitie" autocomplete="off"></textarea>
             </div>
 
             <div class="informatie_regel">
-                <span class="informatie_label">Toelichting:</span>
+                <span class="informatie_label">*Toelichting:</span>
                 <textarea id="toelichting_begrip" class="informatie_tekst" type="text" placeholder="Toelichting" autocomplete="off"></textarea>
             </div>
 
             <div class="informatie_regel">
-                <span class="informatie_label">Voorbeeld:</span>
+                <span class="informatie_label">*Voorbeeld:</span>
                 <textarea id="voorbeeld_begrip" class="informatie_tekst" type="text" placeholder="Voorbeeld" autocomplete="off"></textarea>
             </div>
 
             <div class="informatie_regel">
-                <span class="informatie_label">Heeft bron:</span>
+                <span class="informatie_label">*Heeft als bron:</span>
                 <textarea id="heeft_bron" class="informatie_tekst" type="text" placeholder="Bron" autocomplete="off"></textarea>
             </div>
 
@@ -76,7 +79,7 @@
             </div>
 
             <div class="informatie_regel">
-                <span class="informatie_label">Vervalt op:</span>
+                <span class="informatie_label">*Vervalt op:</span>
                 <input id="vervalt_op" class="informatie_tekst_vervalt_op" type="text" placeholder="Vervalt op" autocomplete="off">
             </div>
             <div class="informatie_regel">
