@@ -118,7 +118,7 @@ h1 {
 }
 
 
-/* Eén zoekresultaat */
+
 .zoekresultaat {
     padding: 10px 10px;
 
@@ -138,7 +138,7 @@ h1 {
 
 /* Om en om grijs */
 .zoekresultaat:nth-child(even) {
-    background-color: #d2d2d4;
+    background-color: #e7e7e7;
 }
 
 
@@ -177,6 +177,10 @@ h1 {
 
 .resultaat_regel{
     margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: start;
+    max-width: 20px; /*TODO */
 }
 
 /* Onderste element krijgt geen margin */

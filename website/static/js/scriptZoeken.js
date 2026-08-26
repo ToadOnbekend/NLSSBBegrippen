@@ -47,7 +47,7 @@ zoekveld.addEventListener("input", async function () {
                 </div>
     
                 <div class="resultaat_regel">
-                    Definitie: ${begrip.definitie_begrip}
+                    Definitie: <span> ${begrip.definitie_begrip} </span>
                 </div>
             `;
 
