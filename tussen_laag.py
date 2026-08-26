@@ -136,7 +136,7 @@ class TussenLaag:
     @fout_afhandeling
     def zoek_begrip_algemeen(self, informatie:dict):
        begrippen = self.stormrg.zoekBegrippen_algemeen(informatie)
-       print("\033[34m[➹] Zoeken op begrip algemeen met: \'" +informatie["zoek_opdracht"]+ "\' --------\033[0m")
+       print("\033[34m[i] Zoeken op begrip algemeen met: \'" +informatie["zoek_opdracht"]+ "\' --------\033[0m")
        if len(begrippen) != 0:
            for begrip in begrippen:
                alternative_termen = self.stormrg.ID_geefAlle_Alternatieve_termen_bijhorend_tot_begrip(
@@ -151,7 +151,7 @@ class TussenLaag:
     @fout_afhandeling
     def geef_alle_begrippenkaders(self):
         begrippenkaders = self.stormrg.geefAlle_Begrippenkaders()
-        print("\033[34m[➹] Alle begrippenkaders --------\033[0m")
+        print("\033[34m[i] Alle begrippenkaders --------\033[0m")
         pp.pprint(begrippenkaders)
         print("\033[34m --------\033[0m")
         return begrippenkaders
@@ -159,7 +159,7 @@ class TussenLaag:
     @fout_afhandeling
     def geef_alle_begrippen_tot_begrippenkader(self, informatie:dict):
 
-        print("\033[34m[➹] Alle begrippen van begrippenkader: \'"+ informatie["naam_begrippenkader"]+"\' --------\033[0m")
+        print("\033[34m[i] Alle begrippen van begrippenkader: \'"+ informatie["naam_begrippenkader"]+"\' --------\033[0m")
         begrippen = self.stormrg.geefBegrip_bijhorend_tot_begrippenkader(
             informatie
         )
@@ -172,7 +172,7 @@ class TussenLaag:
         alternative_termen = self.stormrg.geefAlle_Alternatieve_termen_bijhorend_tot_begrip(
             informatie
         )
-        print("\033[34m[➹] Alle alternative termen van begrip: \'" + informatie["voorkeursterm"] + "\' in begrippenkader: \'"+informatie["naam_begrippenkader"]+"\' --------\033[0m")
+        print("\033[34m[i] Alle alternative termen van begrip: \'" + informatie["voorkeursterm"] + "\' in begrippenkader: \'"+informatie["naam_begrippenkader"]+"\' --------\033[0m")
         pp.pprint(alternative_termen)
         print("\033[34m --------\033[0m")
         return alternative_termen
@@ -182,7 +182,7 @@ class TussenLaag:
 
 
         begrip = self.stormrg.zoekBegrip(informatie)
-        print("\033[34m[➹] Zoek op begrip: \'" + informatie["voorkeursterm"] + "\' in begrippenkader: \'"+informatie["naam_begrippenkader"]+"\' --\033[0m")
+        print("\033[34m[i] Zoek op begrip: \'" + informatie["voorkeursterm"] + "\' in begrippenkader: \'"+informatie["naam_begrippenkader"]+"\' --\033[0m")
         pp.pprint(begrip)
         print(type(begrip))
         return begrip
@@ -190,7 +190,7 @@ class TussenLaag:
     @fout_afhandeling
     def zoek_detail_begrip(self, informatie:dict):
         begrip = self.stormrg.zoekBegrip(informatie)
-        print("\033[34m[➹] Zoek op begrip in detail: \'" + informatie["voorkeursterm"] + "\' in begrippenkader: \'" +
+        print("\033[34m[i] Zoek op begrip in detail: \'" + informatie["voorkeursterm"] + "\' in begrippenkader: \'" +
               informatie[
                   "naam_begrippenkader"] + "\' --\033[0m")
 
@@ -213,14 +213,14 @@ class TussenLaag:
     def geef_alle_begrippen_met_begrippenkaders(self):
         begrippenkaders = self.stormrg.geefAlle_Begrippenkaders()
 
-        print("\033[34m[➹] Geef alle begrippenkaders met bijhorende begrippen: --------\033[0m")
+        print("\033[34m[i] Geef alle begrippenkaders met bijhorende begrippen: --------\033[0m")
 
         for kader in begrippenkaders:
             begrippen_tot_begrippenkader = self.stormrg.geefAlle_Begrippen_bijhorend_tot_begrippenkader(
                 {"naam_begrippenkader": kader["naam_begrippenkader"]}
             )
             kader["begrippen_tot_begrippenkader"] = begrippen_tot_begrippenkader
-            print("\033[34m    [➹] Begrippenkader: \'" + kader["naam_begrippenkader"] + "\' met bijhorende begrippen --------\033[0m")
+            print("\033[34m    [i] Begrippenkader: \'" + kader["naam_begrippenkader"] + "\' met bijhorende begrippen --------\033[0m")
             pp.pprint(kader)
 
         print("\033[34m --------\033[0m")
@@ -233,7 +233,7 @@ class TussenLaag:
     @fout_afhandeling
     def geef_alle_begrip_codes(self):
         begrip_codes = self.stormrg.geefAlle_begripcodes()
-        print("\033[34m[➹] Alle beschrikbare begrip codes --------\033[0m")
+        print("\033[34m[i] Alle beschrikbare begrip codes --------\033[0m")
         pp.pprint(begrip_codes)
         print("\033[34m --------\033[0m")
         return begrip_codes
@@ -242,7 +242,7 @@ class TussenLaag:
     @fout_afhandeling
     def geef_alle_statussen(self):
         statussen = self.stormrg.geefAlle_statussen()
-        print("\033[34m[➹] Alle beschrikbare statussen --------\033[0m")
+        print("\033[34m[i] Alle beschrikbare statussen --------\033[0m")
         pp.pprint(statussen)
         print("\033[34m --------\033[0m")
         return statussen
@@ -250,7 +250,7 @@ class TussenLaag:
     @fout_afhandeling
     def geef_alle_functies(self):
         statussen = self.stormrg.geefAlle_functies()
-        print("\033[34m[➹] Alle beschrikbare Functies --------\033[0m")
+        print("\033[34m[i] Alle beschrikbare Functies --------\033[0m")
         pp.pprint(statussen)
         print("\033[34m --------\033[0m")
         return statussen
@@ -263,7 +263,7 @@ class TussenLaag:
         alternative_termen = self.stormrg.ID_geefAlle_Alternatieve_termen_bijhorend_tot_begrip(
             informatie
         )
-        print("\033[34m[➹] Alle alternative termen van begrip met begrip_id: \'" + str(informatie["begrip_id"]) + "\' --------\033[0m")
+        print("\033[34m[i] Alle alternative termen van begrip met begrip_id: \'" + str(informatie["begrip_id"]) + "\' --------\033[0m")
         pp.pprint(alternative_termen)
         print("\033[34m --------\033[0m")
         return alternative_termen
@@ -271,14 +271,14 @@ class TussenLaag:
     @fout_afhandeling
     def ID_zoek_begrip(self, informatie:dict):
         begrip = self.stormrg.ID_zoekBegrip(informatie)
-        print("\033[34m[➹] Zoek op begrip met begrip_id: \'" + str(informatie["begrip_id"]) + "\' --\033[0m")
+        print("\033[34m[i] Zoek op begrip met begrip_id: \'" + str(informatie["begrip_id"]) + "\' --\033[0m")
         pp.pprint(begrip)
         return begrip
 
     @fout_afhandeling
     def ID_zoek_detail_begrip(self, informatie:dict):
         begrip = self.stormrg.ID_zoekBegrip(informatie)
-        print("\033[34m[➹] Zoek op begrip in detail op begrip_id: \'" + str(informatie["begrip_id"]) + "\' --\033[0m")
+        print("\033[34m[i] Zoek op begrip in detail op begrip_id: \'" + str(informatie["begrip_id"]) + "\' --\033[0m")
 
         if len(begrip) != 0:
 
@@ -291,7 +291,7 @@ class TussenLaag:
 
 
         # else:
-        #     print("\033[34m[➹] Zoek op begrip in detail op begrip_id: \'" + informatie["begrip_id"] + "\' --\033[0m")
+        #     print("\033[34m[i] Zoek op begrip in detail op begrip_id: \'" + informatie["begrip_id"] + "\' --\033[0m")
         #     print("[Geen resultaten gevonden]")
 
         pp.pprint(begrip)
@@ -303,7 +303,7 @@ class TussenLaag:
         begrippen = self.stormrg.ID_geefAlle_Begrippen_bijhorend_tot_begrippenkader(
             informatie
         )
-        print("\033[34m[➹] Alle begrippen van begrippenkader met begrippenkader_id: \'" + str(informatie[
+        print("\033[34m[i] Alle begrippen van begrippenkader met begrippenkader_id: \'" + str(informatie[
             "begrippenkader_id"]) + "\' --------\033[0m")
 
         pp.pprint(begrippen)
@@ -316,7 +316,7 @@ class TussenLaag:
             informatie
         )
 
-        print("\033[34m[➹] Zoek op begrippenkader met begrippenkader_id: \'" + str(informatie["begrippenkader_id"]) + "\' --\033[0m")
+        print("\033[34m[i] Zoek op begrippenkader met begrippenkader_id: \'" + str(informatie["begrippenkader_id"]) + "\' --\033[0m")
         pp.pprint(begrippenkader)
         print("\033[34m --------\033[0m")
 
@@ -328,7 +328,7 @@ class TussenLaag:
             informatie
         )
 
-        print("\033[34m[➹] Zoek op begrippenkader met naam_begrippenkader: \'" +
+        print("\033[34m[i] Zoek op begrippenkader met naam_begrippenkader: \'" +
             informatie["naam_begrippenkader"] + "\' --\033[0m")
         pp.pprint(begrippenkader)
         print("\033[34m --------\033[0m")
@@ -341,7 +341,7 @@ class TussenLaag:
             informatie
         )
         print(
-            "\033[34m[➹] Zoek op begrippenkader in detail op naam_begripppenkader: \'" + str(
+            "\033[34m[i] Zoek op begrippenkader in detail op naam_begripppenkader: \'" + str(
                 informatie["naam_begrippenkader"]) + "\' --\033[0m")
 
         if len(begrippenkader) != 0:
@@ -354,7 +354,7 @@ class TussenLaag:
 
 
             # else:
-            #     print("\033[34m[➹] Zoek op begrip in detail op begrip_id: \'" + informatie["begrip_id"] + "\' --\033[0m")
+            #     print("\033[34m[i] Zoek op begrip in detail op begrip_id: \'" + informatie["begrip_id"] + "\' --\033[0m")
             #     print("[Geen resultaten gevonden]")
 
         pp.pprint(begrippenkader)
@@ -368,7 +368,7 @@ class TussenLaag:
             informatie
         )
         print(
-            "\033[34m[➹] Zoek op begrippenkader in detail op begrippenkader_id: \'" + str(
+            "\033[34m[i] Zoek op begrippenkader in detail op begrippenkader_id: \'" + str(
                 informatie["begrippenkader_id"]) + "\' --\033[0m")
         if len(begrippenkader) != 0:
             begrippen = self.stormrg.ID_geefAlle_Begrippen_bijhorend_tot_begrippenkader(
@@ -379,7 +379,7 @@ class TussenLaag:
 
 
             # else:
-            #     print("\033[34m[➹] Zoek op begrip in detail op begrip_id: \'" + informatie["begrip_id"] + "\' --\033[0m")
+            #     print("\033[34m[i] Zoek op begrip in detail op begrip_id: \'" + informatie["begrip_id"] + "\' --\033[0m")
             #     print("[Geen resultaten gevonden]")
         pp.pprint(begrippenkader)
         print("\033[34m --------\033[0m")
@@ -388,7 +388,7 @@ class TussenLaag:
     @fout_afhandeling
     def geef_alle_begrippen(self):
         begrippen = self.stormrg.geefAlle_begrippen()
-        print("\033[34m[➹] Alle beschrikbare begrippen --------\033[0m")
+        print("\033[34m[i] Alle beschrikbare begrippen --------\033[0m")
         pp.pprint(begrippen)
         print("\033[34m --------\033[0m")
         return begrippen
