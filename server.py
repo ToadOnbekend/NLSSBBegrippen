@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from tussen_laag import TussenLaag as ts
+from tussen_laag import TussenLaag as Ts
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
@@ -167,6 +167,6 @@ def aanmaken_alternatieve_termen():
 
 
 if __name__ == '__main__':
-    t = ts("A22")
+    t = Ts("A22")
     t.controleer_of_database_bestaat()
     app.run(debug=True, port=5000 )
