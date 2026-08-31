@@ -167,6 +167,6 @@ def aanmaken_alternatieve_termen():
 
 
 if __name__ == '__main__':
-    t = Ts("A22")
+    t = Ts("T03")
     t.controleer_of_database_bestaat()
     app.run(debug=True, port=5000 )

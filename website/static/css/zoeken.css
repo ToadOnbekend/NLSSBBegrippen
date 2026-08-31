@@ -64,7 +64,7 @@ h1 {
 
 
 /* Het zoekveld zelf */
-#zoekveld {
+#zoekveld, #naam_begrippenkader_invulveld {
     width: 100%;
 
     border: none;
@@ -78,7 +78,7 @@ h1 {
 
 
 /* Kleur van [Zoeken] voordat je typt */
-#zoekveld::placeholder {
+#zoekveld::placeholder, #naam_begrippenkader_invulveld::placeholder {
     color: #555;
     opacity: 1;
 }
@@ -187,3 +187,4 @@ h1 {
 .resultaat-regel:last-child {
     margin-bottom: 0;
 }
+

@@ -39,38 +39,51 @@ h1 {
     text-decoration: none;
 }
 
-.content{
-    min-height: calc(100vh - 60px);
-    /*display: flex;*/
-    /*justify-content: center;*/
-}
+/* Informatie: begrippen en begrippenkader */
+/*.content{*/
+/*    min-height: calc(100vh - 60px);*/
+/*    !*display: flex;*!*/
+/*    !*justify-content: center;*!*/
+/*}*/
 
 .container{
+   /* display: flex;*/
+   /* !*align-items: center;*!*/
+
+   /* !*width: 50%;*!*/
+
+   /* !*margin: 2px auto;*!*/
+   /*!*justify-content: center;*!*/
+
+   /* max-width: 1500px;*/
+   /*     !*margin-top: 25px;*!*/
+   /*     width: 80%;*/
+
+
+    margin: 25px auto;
+}
+
+.knoppen_en_tekst_container1, .knoppen_en_tekst_container{
     display: flex;
     align-items: center;
+    margin: auto;
+    width: 80%;
 
-    width: 50%;
-
-    margin: 2px auto;
-   /*justify-content: center;*/
-
-    max-width: 1500px;
-        /*margin-top: 25px;*/
 }
 
 .tekstallebegrippen, .tekstallebegrippen1{
     flex: 1;
+    margin-right: 20px;
 
     /*margin: 0;*/
 }
 
-.tekstallebegrippen{
-    margin: 0;
-    font-size: 20px;
-}
+
 
 .tekstallebegrippen1{
     font-size: 35px;
+    line-height: 0;
+
 }
 
 .knoppen{
@@ -93,7 +106,6 @@ button{
 
     font-size: 15px;
     background-color: #ffffff;
-
 }
 
 button:hover{
@@ -191,11 +203,8 @@ button:hover{
 
     flex:1;
     margin: 0;
-
-
-
-
     font-size:20px;
+
 
 }
 
@@ -209,4 +218,443 @@ button:hover{
     font-weight: bold;
 }
 
+.begrippenkader_omschrijving{
+    font-size: 22px;
+    border-left: black solid 2px;
+    padding-left: 2px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-height: 65px;
+
+    overflow-y: auto;
+
+
+}
+
 .begrippenkader_link:hover{text-decoration: underline;}
+
+/*/////////
+/*Zoeken
+/////////
+ */
+
+/* Hele zoekpagina */
+.zoekpagina {
+    width: 80%;
+    max-width: 1500px;
+
+    margin: 25px auto;
+}
+
+
+/* Bovenste zoekgedeelte */
+.zoek_gedeelte {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 5px solid black;
+
+    padding: 10px 20px;
+    gap: 30px;
+}
+
+
+/* Het zoekveld zelf */
+#zoekveld, #naam_begrippenkader_invulveld, #voorkeurs_term {
+    width: 100%;
+
+    border: none;
+    outline: none;
+    background: none;
+    font-family: Roboto;
+    font-size: 27px;
+    font-weight: bold;
+    color: #555;
+}
+
+
+/* Kleur van [Zoeken] voordat je typt */
+#zoekveld::placeholder, #naam_begrippenkader_invulveld::placeholder {
+    color: #555;
+    opacity: 1;
+}
+
+
+/* Tekst rechts van het zoekveld */
+.zoek_uitleg {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+
+    color: #555;
+}
+
+
+/* Gebied waar resultaten komen */
+.zoekresultaten {
+    width: 80%;
+
+    margin: 25px auto;
+    padding: 0;
+
+    /* oude achtergrond/border niet meer nodig */
+    border: none;
+    background-color: transparent;
+}
+
+
+/* Status zoals "Typ hierboven..." */
+.melding {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #555;
+    font-size: 16px;
+}
+
+
+
+.zoekresultaat {
+    padding: 10px 10px;
+
+    border: 1px solid #000000;
+    border-bottom: none;
+
+    font-size: 20px;
+
+}
+
+
+/* Onderste resultaat krijgt ook onderrand */
+.zoekresultaat:last-child {
+    border-bottom: 1px solid #000000;
+}
+
+
+/* Om en om grijs */
+.zoekresultaat:nth-child(even) {
+    background-color: #e7e7e7;
+}
+
+
+.resultaat-termen {
+    font-size: 20px;
+
+    margin-bottom: 3px;
+}
+
+
+/* Voorkeursterm */
+.resultaat-voorkeursterm {
+    font-weight: 500;
+}
+
+
+/* Alternatieve termen */
+.resultaat-alternatieven {
+    font-style: italic;
+}
+
+
+/* Definitie */
+.resultaat-definitie {
+    font-size: 18px;
+    color: #444;
+}
+
+.alternatieve-term {
+    border-bottom: 1px solid black;
+    background-color: #bfbfbf;
+    margin-right: 13px;
+    margin-bottom: 16px;
+
+}
+
+.resultaat_regel{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: start;
+}
+
+/* Onderste element krijgt geen margin */
+.resultaat-regel:last-child {
+    margin-bottom: 0;
+}
+
+/*////////////////
+/* Begrip informatie
+/////////
+ */
+
+.begrip_voorkeursterm{
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.begrippagina, .begrippagina_en_aanmakenpagina{
+    width: 80%;
+    max-width: 1500px;
+    margin: 25px auto;
+}
+
+.begrip_tekst{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5px black solid;
+    padding: 10px 20px;
+
+}
+
+.begrip-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.begrip_datum_en_status {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+}
+
+
+
+.begrip_behoort_tot_begrippenkader {
+    margin: 20px 50px 8px;
+    font-size: 17px;
+}
+
+.link_naam_begrippenkader a {
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+
+.alternatieve_termen {
+    margin: 0 50px;
+    padding: 10px;
+
+    border: 1px solid #999;
+    background-color: #eeeeee;
+}
+
+
+
+.begrip_informatie {
+    margin: 15px 60px;
+
+}
+
+.informatie_regel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.informatie_label {
+
+    color: black;
+
+    padding: 2px 4px;
+    margin-right: 4px;
+}
+
+.informatie_tekst{
+    color: #000000
+}
+
+
+
+.extra_informatie {
+    margin: 15px 50px;
+    border: 1px solid #777;
+    padding: 8px;
+
+    font-size: 18px;
+}
+
+.extra_informatie div {
+    margin: 8px 0;
+}
+
+.lijs_alternatieve_termen{
+    display: flex;
+    gap: 10px;
+    font-style: italic;
+}
+
+
+/*////////
+//Aanmaken van begrip/begrippenkader
+ *//*/////////
+ */
+
+select {
+    border: 1px solid black;
+    padding: 5px;
+    color: red;
+    width: 15%;
+    max-width: 15%;
+    background-color: white;
+    /*font-family: Roboto;*/
+}
+select:hover {
+
+    background-color: #dedede;
+    /*font-family: Roboto;*/
+}
+
+.begripaanmakenpagina{
+    width: 80%;
+    max-width: 1500px;
+    margin: 25px auto;
+}
+
+.voorkeurs_term_invulveld{
+    display: flex;
+    align-items: center;
+    border-bottom: 5px black solid;
+    padding: 10px 20px;
+
+}
+
+.begrip-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.begrip_datum_en_status {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+}
+
+
+
+.begrippenkader_lijst {
+    margin: 20px 50px 8px;
+    font-size: 17px;
+}
+
+.link_naam_begrippenkader a {
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+/*TODO, samen met begrip.css */
+.alternatieve_termen {
+    margin: 0 50px;
+    padding: 10px;
+    display: flex;
+    border: 1px solid #999;
+    background-color: #eeeeee;
+    align-items: center;
+    gap: 5px;
+
+}
+
+
+
+.begrip_informatie_formulier {
+    margin: 15px 60px;
+
+}
+
+.informatie_regel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.informatie_label {
+
+    color: black;
+
+    padding: 2px 4px;
+    margin-right: 4px;
+}
+
+.informatie_tekst{
+    color:red;
+    outline:none;
+    background:none;
+    border: 1px solid black;
+    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
+}
+
+.informatie_tekst:focus{
+    border: 1px solid red;
+}
+
+
+
+.extra_informatie {
+    margin: 15px 50px;
+    border: 1px solid #777;
+    padding: 8px;
+
+    font-size: 18px;
+}
+
+.extra_informatie div {
+    margin: 8px 0;
+}
+
+.lijs_alternatieve_termen{
+    display: flex;
+    gap: 10px;
+    font-style: italic;
+}
+
+
+
+
+
+
+/* Kleur van [Zoeken] voordat je typt */
+#voorkeurs_term::placeholder, #naam_begrippenkader_invulveld::placeholder {
+    color: #ff8282;
+    opacity: 1;
+}
+
+
+
+.informatie_tekst_vervalt_op{
+    max-width: 15%;
+    color: red;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.informatie_tekst_vervalt_op:focus{
+    border: 1px solid red;
+}
+
+.informatie_regel {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: start;
+
+    margin-bottom: 20px;
+}
+
+
+
+.informatie_regel input,
+.informatie_regel textarea,
+.informatie_regel select {
+    width: 100%;
+    box-sizing: border-box;
+}

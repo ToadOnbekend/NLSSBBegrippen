@@ -37,7 +37,7 @@ async function laadBegrippenkaders() {
             document.getElementById("begrippenkader_status").textContent ="Status: "+kader.status_naam
             document.getElementById("begrippenkader_aangemaakt_op").textContent ="Aangemaakt: "+kader.aangemaakt_op
             document.getElementById("begrippenkader_gewijzigd_op").textContent ="Gewijzigd: "+kader.gewijzigd_op
-            document.getElementById("informatie_over_kader").textContent ="Omschrijving: "+kader.omschrijving
+            document.getElementById("informatie_over_kader").textContent =kader.omschrijving
             link_aanmaken_begrip.href = "/begripaanmaken?naam_begrippenkader=" + kader.naam_begrippenkader
 
 
