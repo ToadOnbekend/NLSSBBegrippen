@@ -19,7 +19,7 @@ async function laadKeuzeMenus() {
     const response = await fetch("http://127.0.0.1:5000/invoerschermdata");
     const data = await response.json();
 
-    vulSelect("naam_begrippenkader", data.begrippenkaders, kaderNaam);
+    vulSelect("naam_begrippenkader_dropdown", data.begrippenkaders, kaderNaam);
     vulSelect("status", data.statussen);
     vulSelect("begrip_code", data.begripcodes);
     vulSelect("aangemaakt_door_functie", data.functies);
@@ -63,7 +63,7 @@ begriptoevoegen.addEventListener("click", async function () {
 
         status: document.getElementById("status").value,
 
-        naam_begrippenkader: document.getElementById("naam_begrippenkader").value,
+        naam_begrippenkader: document.getElementById("naam_begrippenkader_dropdown").value,
 
         code: document.getElementById("begrip_code").value,
 
@@ -154,7 +154,7 @@ async function maakAlternatieveTermen(data) {
 
         voorkeursterm:  document.getElementById("voorkeurs_term").value.trim(),
 
-        naam_begrippenkader: document.getElementById("naam_begrippenkader").value,
+        naam_begrippenkader: document.getElementById("naam_begrippenkader_dropdown").value,
 
         status: document.getElementById("status").value,
 
@@ -191,7 +191,7 @@ function heeftLeegVeld(object) {
 
 async function controleerVoorkeursterm(data){
     const voorkeursterm = document.getElementById("voorkeurs_term").value.trim();
-    const begrippenkader = document.getElementById("naam_begrippenkader").value;
+    const begrippenkader = document.getElementById("naam_begrippenkader_dropdown").value;
 
     if (voorkeursterm !== "") {
         const response = await fetch("http://127.0.0.1:5000/controleer_of_voorkeursterm_bestaat", {
