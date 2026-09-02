@@ -68,12 +68,19 @@ h1 {
     align-items: center;
     margin: auto;
     width: 80%;
+}
+
+.knoppen_en_tekst_container1{
+    width: 90%;
 
 }
 
 .tekstallebegrippen, .tekstallebegrippen1{
     flex: 1;
     margin-right: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
 
     /*margin: 0;*/
 }
@@ -83,6 +90,7 @@ h1 {
 .tekstallebegrippen1{
     font-size: 35px;
     line-height: 0;
+
 
 }
 
@@ -113,7 +121,7 @@ button:hover{
 
 }
 
-.begrippenrooster, .begrippenrooster1{
+.begrippenrooster{
     width: 80%;
     margin: 25px auto;
     display: grid;
@@ -123,10 +131,10 @@ button:hover{
 }
 
 .begrippenrooster1{
-    border-top: 2px solid black;
-
+    width: 90%;
+    margin: auto;
+    border-top: 2px black solid;
 }
-
 
 .begrippenkader-titel {
     border: 2px solid black;
@@ -140,16 +148,26 @@ button:hover{
 }
 
 .begrippen-lijst {
-    display: flex;
     flex-direction: column;
+}
+
+.begrip-item-definitie {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-width: 90%;
+    word-break: break-word;
+    max-height: 81px;
+    overflow-y: scroll;
 }
 
 .begrip-item{
     position: relative;
-
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     padding: 12px 20px;
 
     font-size: 24px;
+    justify-content: space-between;
     text-decoration: none;
 
     cursor: pointer;
@@ -188,6 +206,10 @@ button:hover{
     font-size: 16px;
     font-style: normal;
     text-decoration: none;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
 
     z-index: 10;
 
@@ -204,6 +226,8 @@ button:hover{
     flex:1;
     margin: 0;
     font-size:20px;
+    display: flex;
+    gap:15px;
 
 
 }

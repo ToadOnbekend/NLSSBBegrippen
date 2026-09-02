@@ -52,6 +52,16 @@ async function laadBegrippenkaders() {
                 const begripElement = document.createElement("div");
                 begripElement.classList.add("begrip-item");
 
+                const begripDefinitie = document.createElement("span");
+                begripDefinitie.classList.add("begrip-item-definitie");
+
+                begripDefinitie.textContent = begrip.definitie_begrip;
+
+                const begripStatus = document.createElement("span");
+                begripStatus.classList.add("begrip-item-status");
+
+                begripStatus.textContent = begrip.status_naam;
+
 
                 // Voorkeursterm
                 const voorkeursterm = document.createElement("a");
@@ -69,7 +79,9 @@ async function laadBegrippenkaders() {
 
                 // Alles samenvoegen
                 begripElement.appendChild(voorkeursterm);
+                begripElement.appendChild(begripDefinitie);
                 begripElement.appendChild(tooltip);
+                begripElement.appendChild(begripStatus);
 
                 begrippenLijst.appendChild(begripElement);
             });
@@ -88,3 +100,16 @@ async function laadBegrippenkaders() {
 
 
 laadBegrippenkaders();
+
+/*SCROLL HINT */
+// const scrollHint = document.getElementById("scrollHint");
+//
+// if (document.body.scrollHeight > window.innerHeight) {
+//     console.log("Scroll Hint is aan");
+//     scrollHint.style.display = "block";
+// }
+//
+window.addEventListener("scroll", () => {
+    scrollHint.style.display = "none";
+    console.log("Scroll Hint is uit");
+});
