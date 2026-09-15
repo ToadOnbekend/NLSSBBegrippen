@@ -109,7 +109,3 @@ laadBegrippenkaders();
 //     scrollHint.style.display = "block";
 // }
 //
-window.addEventListener("scroll", () => {
-    scrollHint.style.display = "none";
-    console.log("Scroll Hint is uit");
-});

@@ -1,10 +1,35 @@
 from flask import Flask, jsonify, request
 from tussen_laag import TussenLaag as Ts
 from flask_cors import CORS
+import re
+import datetime
+
+#TODO
+#TODO: Voeg datum check nu toe aan allemaal
+#TODO
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+def check_datum(datum:str) -> tuple[bool,str]:
+    datum_nl = "^(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])-(19\\d{2}|2\\d{3}|3000)$"
+    tijd_nul = "00:00:00"
+    datum_nu = datetime.datetime.fromisoformat(datetime.datetime.now().isoformat())
+
+
+    datum = re.fullmatch(datum_nl, datum)
+
+    if datum is not None:
+        # datum_jaar = "0" if len(datum.group(3)) == 1 else "" + datum.group(3)
+        datum_maand = "0" if len(datum.group(1)) == 1 else ""
+        datum_dag = "0" if len(datum.group(2)) == 1 else ""
+        format_iso_1 = f"{datum.group(3)}-{datum_maand+datum.group(1)}-{datum_dag+datum.group(2)}T{tijd_nul}"
+        print(format_iso_1, "<<<<<<<<<<<<<<<<<<<<<<<<")
+        datum_iso = datetime.datetime.fromisoformat(format_iso_1)
+
+        return datum_iso > datum_nu, format_iso_1+"Z"
+
+    return False, "0"
 
 @app.route("/geef_alle_statussen", methods=['GET']  )
 def geefstatusen():
@@ -102,6 +127,13 @@ def geef_allebegrippen():
 def aanmaken_begrip():
     data = request.get_json()
 
+    valide_datum, datum_iso = check_datum(data["vervalt_op"])
+
+    if not valide_datum:
+        return jsonify({"post_status": "Datum is in het verleden of invalide ingevuld"}), 201
+
+    data["vervalt_op"] = datum_iso
+
     if not t.controleer_of_voorkeurs_term_bestaat(data):
         w = t.aanmaken_begrip(data)
 
@@ -116,6 +148,14 @@ def aanmaken_begrip():
 @app.route("/aanmaken_begrippenkader", methods=['POST'])
 def aanmaken_begrippenkader():
     data = request.get_json()
+
+    valide_datum, datum_iso = check_datum(data["vervalt_op"])
+
+    if not valide_datum:
+        return jsonify({"post_status": "Datum is in het verleden of invalide ingevuld"}), 201
+
+    data["vervalt_op"] = datum_iso
+
 
     if not t.controleer_of_begrippenkader_bestaat(data):
         w = t.aanmaken_begrippenkader(data)
