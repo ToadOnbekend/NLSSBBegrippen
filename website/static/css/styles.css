@@ -137,14 +137,12 @@ button:hover{
 }
 
 .begrippenkader-titel {
-    border: 2px solid black;
+    border-bottom: 2px solid black;
 
-    padding: 10px;
+    padding: 10px 0px;
 
     font-size: 26px;
     font-weight: 600;
-
-    margin-bottom: 15px;
 }
 
 .begrippen-lijst {
@@ -169,6 +167,22 @@ button:hover{
     font-size: 24px;
     justify-content: space-between;
     text-decoration: none;
+
+
+    cursor: pointer;
+}
+.begrip-item1{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 12px 20px;
+    background-color: #c4c4c4;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+    font-size: 24px;
+    justify-content: space-between;
+    text-decoration: none;
+
 
     cursor: pointer;
 }
@@ -240,12 +254,15 @@ button:hover{
 #naam_begrippenkader {
     font-size: 35px;
     font-weight: bold;
+    display: inline-block;
+    line-height: 21px;
+    height: 87px;
 }
 
 .begrippenkader_omschrijving{
     font-size: 22px;
     border-left: black solid 2px;
-    padding-left: 2px;
+    padding: 20px 0px 20px 5px;
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -389,10 +406,12 @@ button:hover{
 }
 
 .alternatieve-term {
-    border-bottom: 1px solid black;
-    background-color: #bfbfbf;
+    /*border-bottom: 1px solid black;*/
+    /*background-color: #bfbfbf;*/
     margin-right: 13px;
     margin-bottom: 16px;
+    font-style: italic;
+    font-weight: 600;
 
 }
 
@@ -414,7 +433,7 @@ button:hover{
  */
 
 .begrip_voorkeursterm{
-    font-size: 27px;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -448,7 +467,7 @@ button:hover{
 
 .begrip_behoort_tot_begrippenkader {
     margin: 20px 50px 8px;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .link_naam_begrippenkader a {
@@ -459,13 +478,6 @@ button:hover{
 
 
 
-.alternatieve_termen {
-    margin: 0 50px;
-    padding: 10px;
-
-    border: 1px solid #999;
-    background-color: #eeeeee;
-}
 
 
 
@@ -489,9 +501,7 @@ button:hover{
     margin-right: 4px;
 }
 
-.informatie_tekst{
-    color: #000000
-}
+
 
 
 
@@ -510,7 +520,9 @@ button:hover{
 .lijs_alternatieve_termen{
     display: flex;
     gap: 10px;
+
     font-style: italic;
+    font-weight: 600;
 }
 
 
@@ -522,7 +534,7 @@ button:hover{
 select {
     border: 1px solid black;
     padding: 5px;
-    color: red;
+    color: #0052ad;
     width: 15%;
     max-width: 15%;
     background-color: white;
@@ -575,14 +587,14 @@ select:hover {
 
 /*TODO, samen met begrip.css */
 .alternatieve_termen {
-    margin: 0 50px;
+    margin: 15px 50px;
     padding: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 180px 1fr;
     border: 1px solid #999;
     background-color: #eeeeee;
     align-items: center;
     gap: 5px;
-
 }
 
 
@@ -607,18 +619,34 @@ select:hover {
     margin-right: 4px;
 }
 
+
+
 .informatie_tekst{
-    color:red;
+    color: #0052ad;
+    padding:5px 0px 5px 5px;
     outline:none;
     background:none;
-    border: 1px solid black;
+    border-left: 1px solid black;
     width: 80%;
     min-width: 80%;
     max-width: 80%;
 }
 
-.informatie_tekst:focus{
-    border: 1px solid red;
+.informatie_tekst_invul{
+    border: none;
+    color: #0052ad;
+    padding-left:8px;
+    outline:none;
+    background:none;
+    border: 1px solid black;
+    font-family: Roboto;
+    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
+}
+
+.informatie_tekst_invul:focus{
+    border: 1px solid #0052ad;
 }
 
 
@@ -648,28 +676,28 @@ select:hover {
 
 /* Kleur van [Zoeken] voordat je typt */
 #voorkeurs_term::placeholder, #naam_begrippenkader_invulveld::placeholder {
-    color: #ff8282;
+    color: #6c6c6c;
     opacity: 1;
 }
 
 
 
 .informatie_tekst_vervalt_op{
-    max-width: 15%;
-    color: red;
+    max-width: 14%;
+    color: #0052ad;
     outline: none;
     border: 1px solid black;
     padding: 5px;
 }
 
 .informatie_tekst_vervalt_op:focus{
-    border: 1px solid red;
+    border: 1px solid #0052ad;
 }
 
 .informatie_regel {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    align-items: start;
+    grid-template-columns: 185px 1fr;
+    /*align-items: start;*/
 
     margin-bottom: 20px;
 }
@@ -680,5 +708,7 @@ select:hover {
 .informatie_regel textarea,
 .informatie_regel select {
     width: 100%;
-    box-sizing: border-box;
+}
+
+a {color: #1a5ca4
 }

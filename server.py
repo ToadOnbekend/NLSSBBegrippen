@@ -12,7 +12,7 @@ CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 def check_datum(datum:str) -> tuple[bool,str]:
-    datum_nl = "^(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])-(19\\d{2}|2\\d{3}|3000)$"
+    datum_nl = "^(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[0-2])-(19\\d{2}|2\\d{3}|3000)$"
     tijd_nul = "00:00:00"
     datum_nu = datetime.datetime.fromisoformat(datetime.datetime.now().isoformat())
 
@@ -21,9 +21,9 @@ def check_datum(datum:str) -> tuple[bool,str]:
 
     if datum is not None:
         # datum_jaar = "0" if len(datum.group(3)) == 1 else "" + datum.group(3)
-        datum_maand = "0" if len(datum.group(1)) == 1 else ""
-        datum_dag = "0" if len(datum.group(2)) == 1 else ""
-        format_iso_1 = f"{datum.group(3)}-{datum_maand+datum.group(1)}-{datum_dag+datum.group(2)}T{tijd_nul}"
+        datum_maand = "0" if len(datum.group(2)) == 1 else ""
+        datum_dag = "0" if len(datum.group(1)) == 1 else ""
+        format_iso_1 = f"{datum.group(3)}-{datum_maand+datum.group(2)}-{datum_dag+datum.group(1)}T{tijd_nul}"
         print(format_iso_1, "<<<<<<<<<<<<<<<<<<<<<<<<")
         datum_iso = datetime.datetime.fromisoformat(format_iso_1)
 
